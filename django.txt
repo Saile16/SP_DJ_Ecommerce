@@ -1,0 +1,22 @@
+conda create --name (aqui el nombre que quieres llamar a tu entorno de trbaajo) --->>>
+//INSTALAR DJANGO
+pip install django
+//PARA INICIAR EL PROYECTO
+django-admin startproject (NOMBRE QE PONDRAS A TUAPP) . ///al final de la linea hay un punto . eso tambien va
+
+python manage.py runserver
+python manage.py migrate   /recordar siempre migrar para la db
+python manage.py makemigrations
+python manage.py migrate
+
+
+python manage.py shell  //en el shell por ejemplo
+
+from products.models import Product
+Product.objects.create(title='Raspebrry Pi')
+Product.objects.get(id=1)
+obj=Product.objects.get(id=2)
+
+obj.content="This is some new content"
+
+obj.save()
