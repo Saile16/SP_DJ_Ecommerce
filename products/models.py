@@ -8,3 +8,6 @@ class Product(models.Model):
     title = models.CharField(max_length=220)
     content = models.TextField(null=True, blank=True)
     price = models.IntegerField(default=0)
+
+    def __str__(self):
+        return self.title

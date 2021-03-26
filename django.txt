@@ -4,6 +4,7 @@ pip install django
 //PARA INICIAR EL PROYECTO
 django-admin startproject (NOMBRE QE PONDRAS A TUAPP) . ///al final de la linea hay un punto . eso tambien va
 
+python manage.py startapp (nombredetuapp)
 python manage.py runserver
 python manage.py migrate   /recordar siempre migrar para la db
 python manage.py makemigrations

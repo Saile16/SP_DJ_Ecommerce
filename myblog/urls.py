@@ -15,7 +15,21 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from products import views
+# una manera mas limpia o correcta de importan esto seria
+from products.views import (
+    home_view,
+    product_detail_view,
+    product_api_detail_view,
+    product_list_view
+
+)
 
 urlpatterns = [
+    path('search/', home_view),
+    path('products/', product_list_view),
+    path('products/<int:pk>/', product_detail_view),
+    path('api/products/<int:pk>/', product_api_detail_view),
+    path('products/1/', product_detail_view),
     path('admin/', admin.site.urls),
 ]
