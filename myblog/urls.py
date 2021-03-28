@@ -15,7 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from products import views
+# from products import views
+
 # una manera mas limpia o correcta de importan esto seria
 from products.views import (
     # bad_view,
@@ -27,8 +28,19 @@ from products.views import (
 
 )
 
+from accounts.views import(
+    login_view,
+    logout_view,
+    register_view
+)
+
+from django.views.generic import TemplateView
 urlpatterns = [
     # path('bad-view-dont-use/', bad_view),
+    path('', TemplateView.as_view(template_name='base.html')),
+    path('login/', login_view),
+    path('logout/', logout_view),
+    path('register/', register_view),
     path('search/', search_view),
     path('products/', product_list_view),
     path('products/create/', product_create_view),

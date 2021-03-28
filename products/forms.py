@@ -13,8 +13,8 @@ class ProductModelForm(forms.ModelForm):
             "title",
             "content"
         ]
-    # para validar el formulario o el campo
 
+    # para validar el formulario o el campo
     def clean_title(self):
         data = self.cleaned_data.get('title')
         if len(data) < 4:
